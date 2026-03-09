@@ -5,6 +5,75 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mvpqy"]
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mvpqy"]
+width = 12
+height = 12
+
+[sub_resource type="Animation" id="Animation_mvpqy"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_1yqc4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GunSocket/GunEffect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_esgq3"]
+resource_name = "Shooting"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GunSocket/GunEffect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.06666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.5235988, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kjkj0"]
+_data = {
+&"Idle": SubResource("Animation_mvpqy"),
+&"RESET": SubResource("Animation_1yqc4"),
+&"Shooting": SubResource("Animation_esgq3")
+}
+
 [node name="Player" type="CharacterBody3D" unique_id=96067196]
 script = ExtResource("1_niuxy")
 
@@ -17,3 +86,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Weapon" parent="Camera3D" unique_id=1489056137 instance=ExtResource("3_1yqc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.20000005, -0.6)
+
+[node name="GunSocket" type="Node3D" parent="Camera3D/Weapon" unique_id=679028543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0002002269, 0, -0.254)
+
+[node name="GunEffect" type="Sprite3D" parent="Camera3D/Weapon/GunSocket" unique_id=1559848667]
+visible = false
+texture = SubResource("NoiseTexture2D_mvpqy")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D/Weapon" unique_id=1877720482]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.2, 0, -0.254)
+target_position = Vector3(0, 0, 20)
+
+[node name="GunFireRate" type="Timer" parent="Camera3D/Weapon" unique_id=1724813954]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/Weapon" unique_id=2060989507]
+libraries/ = SubResource("AnimationLibrary_kjkj0")
+autoplay = &"Idle"
+
+[connection signal="timeout" from="Camera3D/Weapon/GunFireRate" to="." method="_on_gun_fire_rate_timeout"]
