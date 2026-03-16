@@ -1,0 +1,9 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://137fb0mw770h"]
+
+[ext_resource type="Texture2D" uid="uid://bioluyqvwvnjm" path="res://assets/textures/albedo-revolver.png" id="1_q7f82"]
+[ext_resource type="Texture2D" uid="uid://bx5oo3qspeueb" path="res://assets/textures/normal-revolver.png" id="2_8jvwl"]
+
+[resource]
+albedo_texture = ExtResource("1_q7f82")
+normal_enabled = true
+normal_texture = ExtResource("2_8jvwl")

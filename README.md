@@ -1,8 +1,8 @@
-# The Jam Template
+# Godot FPS Template
 
 **Here is a simple template for getting up and running with Godot quickly**
 
-This is a simple Godot project that contains three basic screens; a main menu, an empty game scene, and a pause menu overlay. However the primary goal of this template is to accelerate the process of building and deploying the game to [itch.io](https://itch.io/).
+This is a simple Godot project that contains the basic elements to build a first person game; a main menu, an empty game scene, and a pause menu overlay. However the primary goal of this template is to accelerate the process of building and deploying the game to [itch.io](https://itch.io/).
 
 ## GitHub Actions
 

@@ -1,11 +1,12 @@
 shader_type spatial;
 
 void vertex() {
-	COLOR = vec4(0.0,1.0,0.0,0.9);
+	// Called for every vertex the material is visible on.
 }
 
 void fragment() {
-	//ALBEDO = vec3(0.0,0.5,0.0);
+	// Called for every pixel the material is visible on.
+	ALBEDO = vec3(0.0,0.7,0.0);
 }
 
 //void light() {
