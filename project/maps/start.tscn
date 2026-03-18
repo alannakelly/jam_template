@@ -2,17 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://jx8y4e7s2rcw" path="res://scenes/player.tscn" id="1_i78p4"]
 [ext_resource type="Script" uid="uid://ccjmnp3vmyque" path="res://maps/level.gd" id="1_txpt3"]
-[ext_resource type="Shader" uid="uid://d25c04d2txjvg" path="res://shaders/wall.gdshader" id="2_u2sb3"]
-[ext_resource type="Material" uid="uid://t8cgs41roevu" path="res://material/ground.tres" id="2_vhhta"]
-[ext_resource type="Material" uid="uid://cmtd0625turjo" path="res://material/world_wall.tres" id="4_adovl"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vhhta"]
-render_priority = 0
-shader = ExtResource("2_u2sb3")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_adovl"]
-render_priority = 0
-shader = ExtResource("2_u2sb3")
+[ext_resource type="PackedScene" uid="uid://cp1wdqeppq7kf" path="res://scenes/module.tscn" id="3_txpt3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i78p4"]
 
@@ -40,46 +30,9 @@ plane = Plane(1, 0, 0, 0)
 [node name="Start" type="Node3D" unique_id=1179037300]
 script = ExtResource("1_txpt3")
 
-[node name="Node3D" type="Node3D" parent="." unique_id=1033159030]
+[node name="Level" type="Node3D" parent="." unique_id=1033159030]
 
-[node name="Floor" type="CSGBox3D" parent="Node3D" unique_id=361145357]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-size = Vector3(100, 0.01, 100)
-material = ExtResource("2_vhhta")
-
-[node name="NorthWall" type="CSGBox3D" parent="Node3D" unique_id=1425309253]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.9, 50)
-size = Vector3(100, 20, 0.1)
-material = ExtResource("4_adovl")
-
-[node name="SouthWall" type="CSGBox3D" parent="Node3D" unique_id=800905331]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.9, -50)
-size = Vector3(100, 20, 0.1)
-material = ExtResource("4_adovl")
-
-[node name="EastWall" type="CSGBox3D" parent="Node3D" unique_id=830447138]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 9.9, 0)
-size = Vector3(0.1, 20, 100)
-material = ExtResource("4_adovl")
-
-[node name="WestWall" type="CSGBox3D" parent="Node3D" unique_id=1831274788]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 9.9, 0)
-size = Vector3(0.1, 20, 100)
-material = ExtResource("4_adovl")
-
-[node name="Wall" type="CSGBox3D" parent="Node3D" unique_id=1300722828]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 0)
-use_collision = true
-size = Vector3(0.25, 1, 10)
-material = SubResource("ShaderMaterial_vhhta")
-
-[node name="Wall2" type="CSGBox3D" parent="Node3D" unique_id=2108770011]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0)
-use_collision = true
-size = Vector3(0.25, 1, 10)
-material = SubResource("ShaderMaterial_adovl")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=1895710356]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Level" unique_id=1895710356]
 environment = SubResource("Environment_txpt3")
 
 [node name="Player" parent="." unique_id=96067196 instance=ExtResource("1_i78p4")]
@@ -109,3 +62,25 @@ shape = SubResource("WorldBoundaryShape3D_vhhta")
 
 [node name="Floor" type="CollisionShape3D" parent="Bounds" unique_id=205600929]
 shape = SubResource("WorldBoundaryShape3D_qsust")
+
+[node name="Stuff" type="Node3D" parent="." unique_id=725226872]
+
+[node name="Module" parent="Stuff" unique_id=1896186862 instance=ExtResource("3_txpt3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3166006, 0, 3.346919)
+selected_module = "Props_Shelf.fbx"
+
+[node name="Module2" parent="Stuff" unique_id=876447805 instance=ExtResource("3_txpt3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7714963, 0, 0)
+selected_module = "Door_Single.fbx"
+
+[node name="Module3" parent="Stuff" unique_id=1142847014 instance=ExtResource("3_txpt3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.8138514)
+selected_module = "FloorTile_Side.fbx"
+
+[node name="Module4" parent="Stuff" unique_id=1987952399 instance=ExtResource("3_txpt3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.557311, 0, 0)
+selected_module = "Door_Single.fbx"
+
+[node name="Module5" parent="Stuff" unique_id=2076647245 instance=ExtResource("3_txpt3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4049306, 0, 0)
+selected_module = "FloorTile_Side.fbx"

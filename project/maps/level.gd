@@ -4,7 +4,7 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Player/Camera3D.make_current()
-	$Player/Camera3D.environment = $WorldEnvironment
+	$Player/Camera3D.environment = $Level/WorldEnvironment
 	pass # Replace with function body.
 
 

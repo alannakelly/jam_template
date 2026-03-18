@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://jx8y4e7s2rcw"]
 
 [ext_resource type="Script" uid="uid://chsfjipj04txp" path="res://scripts/player.gd" id="1_niuxy"]
+[ext_resource type="PackedScene" uid="uid://c1yhet2lj7omr" path="res://scenes/pistol.tscn" id="2_g2els"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mvpqy"]
 
-[node name="Player" type="CharacterBody3D" unique_id=96067196]
+[node name="Player" type="CharacterBody3D" unique_id=96067196 node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_niuxy")
-look_sensitivity = null
-weapons = Array[PackedScene]([null])
+weapon = NodePath("Camera3D/Pistol")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1084925446]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -16,3 +16,6 @@ shape = SubResource("CapsuleShape3D_mvpqy")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1319110717]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 current = true
+
+[node name="Pistol" parent="Camera3D" unique_id=1876210660 instance=ExtResource("2_g2els")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.2, -0.2, -0.6)

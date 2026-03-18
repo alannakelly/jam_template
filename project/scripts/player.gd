@@ -4,13 +4,9 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 @export var look_sensitivity = 0.2
-@export var weapon: PackedScene
+@export var weapon: Node3D
 
 var look = Vector2.ZERO
-
-func _ready() -> void:
-	weapon.instantiate()
-	$Camera3D.add_child(weapon)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("fire"):

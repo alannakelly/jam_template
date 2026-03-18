@@ -17,13 +17,15 @@ func _process(delta: float) -> void:
 	
 func fire() -> void:
 	if ammo > 0:
-		animation_player.play('Fire')
+		if ammo > 1:
+			animation_player.play('Fire')
+		else:
+			animation_player.play('FireLastOne')
 		ammo -= 1
 	else:
 		emit_signal("no_ammo")
 
 func reload() -> void:
 	animation_player.play('Reload')
-	animation_player.queue('Slide')
 	ammo = ammo_per_clip
 	pass
