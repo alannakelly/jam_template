@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cvm28y7a7qdby"]
+
+[ext_resource type="Script" uid="uid://m0foavuo1uqi" path="res://scenes/modular_level.gd" id="1_hyued"]
+
+[node name="ModularLevel" type="Node3D" unique_id=1159499208]
+script = ExtResource("1_hyued")

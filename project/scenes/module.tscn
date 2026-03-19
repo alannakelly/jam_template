@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cp1wdqeppq7kf"]
-
-[ext_resource type="Script" uid="uid://d17xu8d4q3mo3" path="res://scenes/module.gd" id="1_mfpw2"]
-
-[node name="Module" type="Node3D" unique_id=1896186862]
-script = ExtResource("1_mfpw2")
-modules_dir = "res://assets/ultimate_modular_sci_fi"
-selected_module = null
