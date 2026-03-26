@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dyumviryv87g1"]
+
+[ext_resource type="Shader" uid="uid://c1u5i4nr0tpy1" path="res://assets/models/trees/pine/none.gdshader" id="1_88fgj"]
+[ext_resource type="Texture2D" uid="uid://dh4usfyntienc" path="res://assets/models/trees/pine/diffuse_none.tga" id="2_5gged"]
+[ext_resource type="Texture2D" uid="uid://btann1lev7tgu" path="res://assets/models/trees/pine/translucency_none.tga" id="3_08fr2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_88fgj")
+shader_parameter/diffuse = ExtResource("2_5gged")
+shader_parameter/translucency = ExtResource("3_08fr2")

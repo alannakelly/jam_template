@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dbpmpgpko7us1"]
+
+[ext_resource type="ArrayMesh" uid="uid://b1f6knrsav512" path="res://assets/models/trees/pine/snow_pine_tree.obj" id="1_v7mlg"]
+[ext_resource type="Material" uid="uid://dtgooy0d356yu" path="res://assets/models/trees/pine/none-standard.tres" id="2_v7mlg"]
+
+[node name="PineTree" type="Node3D" unique_id=398424701]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1289499180]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+mesh = ExtResource("1_v7mlg")
+surface_material_override/0 = ExtResource("2_v7mlg")

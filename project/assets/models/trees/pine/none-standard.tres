@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dtgooy0d356yu"]
+
+[ext_resource type="Texture2D" uid="uid://dh4usfyntienc" path="res://assets/models/trees/pine/diffuse_none.tga" id="1_lnd1v"]
+[ext_resource type="Texture2D" uid="uid://gfrcvrrafvjk" path="res://assets/models/trees/pine/normal_none.tga" id="3_uea3a"]
+
+[resource]
+transparency = 1
+specular_mode = 2
+albedo_texture = ExtResource("1_lnd1v")
+albedo_texture_force_srgb = true
+emission_enabled = true
+emission_texture = ExtResource("1_lnd1v")
+normal_enabled = true
+normal_texture = ExtResource("3_uea3a")
