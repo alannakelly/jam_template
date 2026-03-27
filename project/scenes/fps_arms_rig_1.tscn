@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://1i6co7i04tm"]
+
+[ext_resource type="PackedScene" uid="uid://noy0jf2j83au" path="res://assets/models/arms/FPS ARMS RIG 1.fbx" id="1_et0in"]
+
+[node name="FPS ARMS RIG 1" unique_id=1488379334 instance=ExtResource("1_et0in")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="caucasian_male_1_Body" parent="caucasian_male_1/Skeleton3D" parent_id_path=PackedInt32Array(1211497749) index="0" unique_id=1077104969]
+visible = false
